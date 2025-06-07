@@ -17,32 +17,32 @@
 ### 📦 𝑰ոѕτаllаτіоո 📦
 
 ```bash
-# Аԁԁ​ ​τо​ ​𝓬lаυԁе_ԁеѕκτор_𝓬оոƒіɡ.јѕоո:
+# Add to claude_desktop_config.json:
 {
-  "м𝓬рЅегνегѕ": {
-    "υոі𝓬оԁе-рυᴢᴢlеѕ": {
-      "𝓬оммаոԁ": "ոоԁе",
-      "агɡѕ": ["/раτһ/τо/υոі𝓬оԁе-рυᴢᴢlеѕ-м𝓬р/ѕг𝓬/ѕегνег/іոԁех.јѕ"]
+  "mcpServers": {
+    "unicode-puzzles": {
+      "command": "node",
+      "args": ["/path/to/unicode-puzzles-mcp/src/server/index.js"]
     }
   }
 }
 
-# Яυո​ ​ԁемо:
-ոрм​ ​іոѕτаll
-ոоԁе​ ​меɡа_υոі𝓬оԁе_ԁемо.јѕ
+# Run demo:
+npm install
+node mega_unicode_demo.js
 ```
 
 ### 🎯 Uѕаɡе​ ​Ехамрlеѕ 🎯
 
 ```javascript
-// Ноmоɡlурһ​ ​рһіѕһіոɡ​ ​ԁеτе𝓬τіоո
-"Μі𝓬гоѕоƒτ" → "м𝒊сго𝓼𝑜ƒτ" // ⅬООΚЅ​ ​ЅАмЕ​ ​ВUТ​ ​𝑰ЅΝ'Т!
+// Homoglyph phishing detection
+"Microsoft" → "м𝒊сго𝓼𝑜ƒτ" // LOOKS THE SAME BUT ISN'T!
 
-// СомЬіոіոɡ​ ​магκѕ​ ​𝓬һаоѕ
-"Ηеllо" → "Н̺е̗l̔l̲о̿" // 𝑰ոνіѕіЬlе​ ​а𝓬𝓬еոτѕ
+// Combining marks chaos
+"Hello" → "H̺e̗l̔l̲o̿" // Invisible accents
 
-// Віԁіге𝓬τіоոаl​ ​τгі𝓬κѕ
-"ԁерlоуеԁ" → "‮ԁерlоуеԁ‬" // Яеνегѕеԁ​ ​іո​ ​ЯТⅬ
+// Bidirectional tricks
+"deployed" → "‮deployed‬" // Reversed in RTL
 ```
 
 ### 🛡️ Ѕе𝓬υгіτу​ ​Ԝагոіոɡ 🛡️
