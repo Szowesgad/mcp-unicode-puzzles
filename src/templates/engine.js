@@ -107,6 +107,136 @@ export class TemplateEngine {
         },
         spaceChars: ['✧', '✦', '★', '☆', '✯', '✩', '✫', '✬', '✭'],
         description: 'Space-themed encoding with constellation patterns'
+      },
+      
+      homoglyph: {
+        name: 'homoglyph',
+        prefix: '[НОMОGLҮРН]',
+        patterns: {
+          easy: {
+            opening: '',
+            closing: '',
+            separator: '',
+            substitutionRate: 0.3
+          },
+          medium: {
+            opening: '',
+            closing: '',
+            separator: '',
+            substitutionRate: 0.5
+          },
+          hard: {
+            opening: '',
+            closing: '',
+            separator: '',
+            substitutionRate: 0.8
+          }
+        },
+        description: 'Visually identical character substitution from different alphabets'
+      },
+      
+      combining: {
+        name: 'combining',
+        prefix: '☠️',
+        patterns: {
+          easy: {
+            opening: '☠️',
+            closing: '☠️',
+            separator: '',
+            chaosLevel: 1
+          },
+          medium: {
+            opening: '☠️☠️',
+            closing: '☠️☠️',
+            separator: '',
+            chaosLevel: 3
+          },
+          hard: {
+            opening: '☠️☠️☠️',
+            closing: '☠️☠️☠️',
+            separator: '',
+            chaosLevel: 5
+          }
+        },
+        description: 'Zalgo-like text with combining diacritical marks'
+      },
+      
+      bidirectional: {
+        name: 'bidirectional',
+        prefix: '⬅️➡️',
+        patterns: {
+          easy: {
+            opening: '➡️',
+            closing: '⬅️',
+            separator: '',
+            reverseRate: 0.2
+          },
+          medium: {
+            opening: '⬅️➡️',
+            closing: '➡️⬅️',
+            separator: '',
+            reverseRate: 0.4
+          },
+          hard: {
+            opening: '⬅️➡️⬅️',
+            closing: '➡️⬅️➡️',
+            separator: '',
+            reverseRate: 0.6
+          }
+        },
+        description: 'Text direction manipulation using RTL/LTR override characters'
+      },
+      
+      whitespace: {
+        name: 'whitespace',
+        prefix: '[ ]',
+        patterns: {
+          easy: {
+            opening: '[',
+            closing: ']',
+            separator: '',
+            spaceTypes: 4
+          },
+          medium: {
+            opening: '[ ',
+            closing: ' ]',
+            separator: '',
+            spaceTypes: 8
+          },
+          hard: {
+            opening: '[  ',
+            closing: '  ]',
+            separator: '',
+            spaceTypes: 16
+          }
+        },
+        description: 'Different types of whitespace characters as encoding'
+      },
+      
+      variation: {
+        name: 'variation',
+        prefix: '🎭',
+        patterns: {
+          easy: {
+            opening: '🎭',
+            closing: '🎭',
+            separator: '',
+            selectorCount: 4
+          },
+          medium: {
+            opening: '🎭🎨',
+            closing: '🎨🎭',
+            separator: '',
+            selectorCount: 8
+          },
+          hard: {
+            opening: '🎭🎨🎪',
+            closing: '🎪🎨🎭',
+            separator: '',
+            selectorCount: 16
+          }
+        },
+        description: 'Emoji variation selectors for hidden data'
       }
     };
   }

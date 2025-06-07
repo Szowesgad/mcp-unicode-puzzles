@@ -1,5 +1,8 @@
+import { AdvancedUnicodeTechniques } from './advanced_techniques.js';
+
 export class StegoPuzzleManager {
   constructor() {
+    this.advanced = new AdvancedUnicodeTechniques();
     this.zeroWidthChars = {
       ZWSP: '\u200B',  // Zero width space
       ZWNJ: '\u200C',  // Zero width non-joiner
@@ -30,6 +33,36 @@ export class StegoPuzzleManager {
         prefix: '[ERR0R]',
         separator: '',
         encoding: 'random'
+      },
+      void: {
+        prefix: '✧･ﾟ:*',
+        separator: '⋆',
+        encoding: 'binary'
+      },
+      homoglyph: {
+        prefix: '[НОMОGLҮРН]',
+        separator: '',
+        encoding: 'homoglyph'
+      },
+      combining: {
+        prefix: '☠️',
+        separator: '☠️',
+        encoding: 'combining'
+      },
+      bidirectional: {
+        prefix: '⬅️➡️',
+        separator: '',
+        encoding: 'bidirectional'
+      },
+      whitespace: {
+        prefix: '[ ]',
+        separator: '',
+        encoding: 'whitespace'
+      },
+      variation: {
+        prefix: '🎭',
+        separator: '🎭',
+        encoding: 'variation'
       }
     };
   }
@@ -68,6 +101,21 @@ export class StegoPuzzleManager {
         break;
       case 'random':
         encoded = this.randomEncode(message, binarySecret, difficulty);
+        break;
+      case 'homoglyph':
+        encoded = this.advanced.homoglyphEncode(message, secret);
+        break;
+      case 'combining':
+        encoded = this.advanced.combiningMarksEncode(message, secret);
+        break;
+      case 'bidirectional':
+        encoded = this.advanced.bidirectionalEncode(message, secret);
+        break;
+      case 'whitespace':
+        encoded = this.advanced.whitespaceEncode(message, secret);
+        break;
+      case 'variation':
+        encoded = this.advanced.variationSelectorsEncode(message, secret);
         break;
       default:
         throw new Error('Invalid encoding pattern');
@@ -242,6 +290,17 @@ export class StegoPuzzleManager {
     };
   }
 
+  applyTemplate(encodedText, template) {
+    const pattern = this.patterns[template.name];
+    return `${template.prefix}${pattern.separator}${encodedText}${pattern.separator}`;
+  }
+
+  textToBinary(text) {
+    return text.split('').map(char => 
+      char.charCodeAt(0).toString(2).padStart(8, '0')
+    ).join('');
+  }
+
   binaryToText(binary) {
     // Split binary into 8-bit chunks
     const bytes = binary.match(/.{1,8}/g) || [];
@@ -250,5 +309,22 @@ export class StegoPuzzleManager {
     return bytes.map(byte => 
       String.fromCharCode(parseInt(byte, 2))
     ).join('');
+  }
+
+  getRandomZeroWidth() {
+    const chars = Object.values(this.zeroWidthChars);
+    return chars[Math.floor(Math.random() * chars.length)];
+  }
+
+  binaryToTrinary(binary) {
+    // Simple conversion - group 2 bits into trinary
+    let trinary = '';
+    for (let i = 0; i < binary.length; i += 2) {
+      const twoBits = binary.substr(i, 2);
+      if (twoBits === '00') trinary += '0';
+      else if (twoBits === '01' || twoBits === '10') trinary += '1';
+      else trinary += '2';
+    }
+    return trinary;
   }
 }
