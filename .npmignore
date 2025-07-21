@@ -1,0 +1,43 @@
+# Development files
+test-puzzle.js
+DEMO-VISTA.md
+VISUAL-DEMO.md
+*.test.js
+*.spec.js
+
+# Config files
+.eslintrc*
+.prettierrc*
+jest.config.js
+
+# Dev dependencies
+node_modules/
+coverage/
+.nyc_output/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+
+# Examples (they're in README)
+# Keep examples/ for users to reference!
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/

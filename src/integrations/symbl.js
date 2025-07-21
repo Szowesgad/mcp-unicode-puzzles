@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
-import { JSDOM } from 'jsdom';
+import jsdom from 'jsdom';
+const { JSDOM } = jsdom;
 
 export class SymblConnector {
   constructor() {

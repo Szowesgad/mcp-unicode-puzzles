@@ -1,5 +1,9 @@
 # 🌌 Unicode Puzzles MCP
 
+[![npm version](https://badge.fury.io/js/unicode-puzzles-mcp.svg)](https://www.npmjs.com/package/unicode-puzzles-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-green.svg)](https://modelcontextprotocol.io)
+
 Quantum steganography puzzles powered by MCP. Create and manage encoded messages using zero-width characters and advanced Unicode techniques.
 
 ## 🎯 Features
