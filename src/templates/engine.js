@@ -2,246 +2,248 @@ export class TemplateEngine {
   constructor() {
     this.templates = {
       quantum: {
-        name: 'quantum',
-        prefix: '【𝚀𝚄𝙰𝙽𝚃𝚄𝙼】',
+        name: "quantum",
+        prefix: "【𝚀𝚄𝙰𝙽𝚃𝚄𝙼】",
         patterns: {
           easy: {
-            opening: '∎',
-            closing: '∎',
-            separator: '⠀', // Unicode space
-            noiseChance: 0.1
+            opening: "∎",
+            closing: "∎",
+            separator: "⠀", // Unicode space
+            noiseChance: 0.1,
           },
           medium: {
-            opening: '∎∎',
-            closing: '∎∎',
-            separator: '⠀',
-            noiseChance: 0.3
+            opening: "∎∎",
+            closing: "∎∎",
+            separator: "⠀",
+            noiseChance: 0.3,
           },
           hard: {
-            opening: '∎∎∎',
-            closing: '∎∎∎',
-            separator: '⠀',
-            noiseChance: 0.5
-          }
+            opening: "∎∎∎",
+            closing: "∎∎∎",
+            separator: "⠀",
+            noiseChance: 0.5,
+          },
         },
-        quantumChars: ['α', 'β', 'γ', 'δ', 'ψ', 'Ψ', 'Φ', 'ℏ', '∞'],
-        description: 'Quantum superposition encoding with variable noise'
+        quantumChars: ["α", "β", "γ", "δ", "ψ", "Ψ", "Φ", "ℏ", "∞"],
+        description: "Quantum superposition encoding with variable noise",
       },
-      
+
       orbital: {
-        name: 'orbital',
-        prefix: '◉',
+        name: "orbital",
+        prefix: "◉",
         patterns: {
           easy: {
-            opening: '◯',
-            closing: '◯',
-            separator: '·',
-            rotationSteps: 4
+            opening: "◯",
+            closing: "◯",
+            separator: "·",
+            rotationSteps: 4,
           },
           medium: {
-            opening: '◐',
-            closing: '◑',
-            separator: '∘',
-            rotationSteps: 8
+            opening: "◐",
+            closing: "◑",
+            separator: "∘",
+            rotationSteps: 8,
           },
           hard: {
-            opening: '◒',
-            closing: '◓',
-            separator: '⋅',
-            rotationSteps: 12
-          }
+            opening: "◒",
+            closing: "◓",
+            separator: "⋅",
+            rotationSteps: 12,
+          },
         },
-        orbitalChars: ['⌾', '☉', '⊕', '⊗', '⊙', '◎', '⚪', '⚫'],
-        description: 'Circular pattern encoding with orbital mechanics'
+        orbitalChars: ["⌾", "☉", "⊕", "⊗", "⊙", "◎", "⚪", "⚫"],
+        description: "Circular pattern encoding with orbital mechanics",
       },
-      
+
       glitch: {
-        name: 'glitch',
-        prefix: '[ERR0R]',
+        name: "glitch",
+        prefix: "[ERR0R]",
         patterns: {
           easy: {
-            opening: '█',
-            closing: '█',
-            separator: ' ',
-            glitchIntensity: 0.2
+            opening: "█",
+            closing: "█",
+            separator: " ",
+            glitchIntensity: 0.2,
           },
           medium: {
-            opening: '▓▒',
-            closing: '▒▓',
-            separator: '',
-            glitchIntensity: 0.4
+            opening: "▓▒",
+            closing: "▒▓",
+            separator: "",
+            glitchIntensity: 0.4,
           },
           hard: {
-            opening: '▓▒░',
-            closing: '░▒▓',
-            separator: '',
-            glitchIntensity: 0.6
-          }
+            opening: "▓▒░",
+            closing: "░▒▓",
+            separator: "",
+            glitchIntensity: 0.6,
+          },
         },
-        glitchChars: ['░', '▒', '▓', '█', '☐', '☑', '☒', '✓', '✗'],
-        description: 'Glitch-based encoding with visual noise'
+        glitchChars: ["░", "▒", "▓", "█", "☐", "☑", "☒", "✓", "✗"],
+        description: "Glitch-based encoding with visual noise",
       },
-      
+
       void: {
-        name: 'void',
-        prefix: '✧･ﾟ:*',
+        name: "void",
+        prefix: "✧･ﾟ:*",
         patterns: {
           easy: {
-            opening: '⋆',
-            closing: '⋆',
-            separator: ' ',
-            constellationSize: 3
+            opening: "⋆",
+            closing: "⋆",
+            separator: " ",
+            constellationSize: 3,
           },
           medium: {
-            opening: '⋆⋆',
-            closing: '⋆⋆',
-            separator: '･',
-            constellationSize: 5
+            opening: "⋆⋆",
+            closing: "⋆⋆",
+            separator: "･",
+            constellationSize: 5,
           },
           hard: {
-            opening: '⋆⋆⋆',
-            closing: '⋆⋆⋆',
-            separator: '⋆',
-            constellationSize: 7
-          }
+            opening: "⋆⋆⋆",
+            closing: "⋆⋆⋆",
+            separator: "⋆",
+            constellationSize: 7,
+          },
         },
-        spaceChars: ['✧', '✦', '★', '☆', '✯', '✩', '✫', '✬', '✭'],
-        description: 'Space-themed encoding with constellation patterns'
+        spaceChars: ["✧", "✦", "★", "☆", "✯", "✩", "✫", "✬", "✭"],
+        description: "Space-themed encoding with constellation patterns",
       },
-      
+
       homoglyph: {
-        name: 'homoglyph',
-        prefix: '[НОMОGLҮРН]',
+        name: "homoglyph",
+        prefix: "[НОMОGLҮРН]",
         patterns: {
           easy: {
-            opening: '',
-            closing: '',
-            separator: '',
-            substitutionRate: 0.3
+            opening: "",
+            closing: "",
+            separator: "",
+            substitutionRate: 0.3,
           },
           medium: {
-            opening: '',
-            closing: '',
-            separator: '',
-            substitutionRate: 0.5
+            opening: "",
+            closing: "",
+            separator: "",
+            substitutionRate: 0.5,
           },
           hard: {
-            opening: '',
-            closing: '',
-            separator: '',
-            substitutionRate: 0.8
-          }
+            opening: "",
+            closing: "",
+            separator: "",
+            substitutionRate: 0.8,
+          },
         },
-        description: 'Visually identical character substitution from different alphabets'
+        description:
+          "Visually identical character substitution from different alphabets",
       },
-      
+
       combining: {
-        name: 'combining',
-        prefix: '☠️',
+        name: "combining",
+        prefix: "☠️",
         patterns: {
           easy: {
-            opening: '☠️',
-            closing: '☠️',
-            separator: '',
-            chaosLevel: 1
+            opening: "☠️",
+            closing: "☠️",
+            separator: "",
+            chaosLevel: 1,
           },
           medium: {
-            opening: '☠️☠️',
-            closing: '☠️☠️',
-            separator: '',
-            chaosLevel: 3
+            opening: "☠️☠️",
+            closing: "☠️☠️",
+            separator: "",
+            chaosLevel: 3,
           },
           hard: {
-            opening: '☠️☠️☠️',
-            closing: '☠️☠️☠️',
-            separator: '',
-            chaosLevel: 5
-          }
+            opening: "☠️☠️☠️",
+            closing: "☠️☠️☠️",
+            separator: "",
+            chaosLevel: 5,
+          },
         },
-        description: 'Zalgo-like text with combining diacritical marks'
+        description: "Zalgo-like text with combining diacritical marks",
       },
-      
+
       bidirectional: {
-        name: 'bidirectional',
-        prefix: '⬅️➡️',
+        name: "bidirectional",
+        prefix: "⬅️➡️",
         patterns: {
           easy: {
-            opening: '➡️',
-            closing: '⬅️',
-            separator: '',
-            reverseRate: 0.2
+            opening: "➡️",
+            closing: "⬅️",
+            separator: "",
+            reverseRate: 0.2,
           },
           medium: {
-            opening: '⬅️➡️',
-            closing: '➡️⬅️',
-            separator: '',
-            reverseRate: 0.4
+            opening: "⬅️➡️",
+            closing: "➡️⬅️",
+            separator: "",
+            reverseRate: 0.4,
           },
           hard: {
-            opening: '⬅️➡️⬅️',
-            closing: '➡️⬅️➡️',
-            separator: '',
-            reverseRate: 0.6
-          }
+            opening: "⬅️➡️⬅️",
+            closing: "➡️⬅️➡️",
+            separator: "",
+            reverseRate: 0.6,
+          },
         },
-        description: 'Text direction manipulation using RTL/LTR override characters'
+        description:
+          "Text direction manipulation using RTL/LTR override characters",
       },
-      
+
       whitespace: {
-        name: 'whitespace',
-        prefix: '[ ]',
+        name: "whitespace",
+        prefix: "[ ]",
         patterns: {
           easy: {
-            opening: '[',
-            closing: ']',
-            separator: '',
-            spaceTypes: 4
+            opening: "[",
+            closing: "]",
+            separator: "",
+            spaceTypes: 4,
           },
           medium: {
-            opening: '[ ',
-            closing: ' ]',
-            separator: '',
-            spaceTypes: 8
+            opening: "[ ",
+            closing: " ]",
+            separator: "",
+            spaceTypes: 8,
           },
           hard: {
-            opening: '[  ',
-            closing: '  ]',
-            separator: '',
-            spaceTypes: 16
-          }
+            opening: "[  ",
+            closing: "  ]",
+            separator: "",
+            spaceTypes: 16,
+          },
         },
-        description: 'Different types of whitespace characters as encoding'
+        description: "Different types of whitespace characters as encoding",
       },
-      
+
       variation: {
-        name: 'variation',
-        prefix: '🎭',
+        name: "variation",
+        prefix: "🎭",
         patterns: {
           easy: {
-            opening: '🎭',
-            closing: '🎭',
-            separator: '',
-            selectorCount: 4
+            opening: "🎭",
+            closing: "🎭",
+            separator: "",
+            selectorCount: 4,
           },
           medium: {
-            opening: '🎭🎨',
-            closing: '🎨🎭',
-            separator: '',
-            selectorCount: 8
+            opening: "🎭🎨",
+            closing: "🎨🎭",
+            separator: "",
+            selectorCount: 8,
           },
           hard: {
-            opening: '🎭🎨🎪',
-            closing: '🎪🎨🎭',
-            separator: '',
-            selectorCount: 16
-          }
+            opening: "🎭🎨🎪",
+            closing: "🎪🎨🎭",
+            separator: "",
+            selectorCount: 16,
+          },
         },
-        description: 'Emoji variation selectors for hidden data'
-      }
+        description: "Emoji variation selectors for hidden data",
+      },
     };
   }
 
-  getTemplate(name, difficulty = 'medium') {
+  getTemplate(name, difficulty = "medium") {
     const template = this.templates[name];
     if (!template) {
       throw new Error(`Template '${name}' not found`);
@@ -249,31 +251,33 @@ export class TemplateEngine {
 
     const pattern = template.patterns[difficulty];
     if (!pattern) {
-      throw new Error(`Difficulty '${difficulty}' not found for template '${name}'`);
+      throw new Error(
+        `Difficulty '${difficulty}' not found for template '${name}'`,
+      );
     }
 
     return {
       ...template,
       pattern,
-      difficulty
+      difficulty,
     };
   }
 
   generatePattern(template, length, options = {}) {
     const { name, pattern } = template;
-    let result = '';
+    let result = "";
 
     switch (name) {
-      case 'quantum':
+      case "quantum":
         result = this.generateQuantumPattern(pattern, length, options);
         break;
-      case 'orbital':
+      case "orbital":
         result = this.generateOrbitalPattern(pattern, length, options);
         break;
-      case 'glitch':
+      case "glitch":
         result = this.generateGlitchPattern(pattern, length, options);
         break;
-      case 'void':
+      case "void":
         result = this.generateVoidPattern(pattern, length, options);
         break;
       default:
@@ -293,9 +297,10 @@ export class TemplateEngine {
 
       // Add quantum noise based on difficulty
       if (Math.random() < pattern.noiseChance) {
-        const quantumChar = template.quantumChars[
-          Math.floor(Math.random() * template.quantumChars.length)
-        ];
+        const quantumChar =
+          template.quantumChars[
+            Math.floor(Math.random() * template.quantumChars.length)
+          ];
         result += quantumChar;
       }
     }
@@ -311,8 +316,11 @@ export class TemplateEngine {
     for (let i = 0; i < length; i++) {
       // Calculate orbital position
       const angle = (rotation + i) * stepSize;
-      const orbitalIndex = Math.floor((angle / (2 * Math.PI)) * template.orbitalChars.length);
-      const orbitalChar = template.orbitalChars[orbitalIndex % template.orbitalChars.length];
+      const orbitalIndex = Math.floor(
+        (angle / (2 * Math.PI)) * template.orbitalChars.length,
+      );
+      const orbitalChar =
+        template.orbitalChars[orbitalIndex % template.orbitalChars.length];
 
       result += pattern.separator + orbitalChar;
     }
@@ -332,9 +340,10 @@ export class TemplateEngine {
       if (Math.random() < effectiveIntensity) {
         const glitchLength = Math.floor(Math.random() * 3) + 1;
         for (let j = 0; j < glitchLength; j++) {
-          const glitchChar = template.glitchChars[
-            Math.floor(Math.random() * template.glitchChars.length)
-          ];
+          const glitchChar =
+            template.glitchChars[
+              Math.floor(Math.random() * template.glitchChars.length)
+            ];
           result += glitchChar;
         }
       }
@@ -348,18 +357,20 @@ export class TemplateEngine {
     const template = this.templates.void;
 
     // Create constellation pattern
-    const constellationPoints = constellation.length > 0 ? 
-      constellation : 
-      this.generateConstellation(pattern.constellationSize);
+    const constellationPoints =
+      constellation.length > 0
+        ? constellation
+        : this.generateConstellation(pattern.constellationSize);
 
     for (let i = 0; i < length; i++) {
       result += pattern.separator;
 
       // Add space characters at constellation points
       if (constellationPoints.includes(i)) {
-        const spaceChar = template.spaceChars[
-          Math.floor(Math.random() * template.spaceChars.length)
-        ];
+        const spaceChar =
+          template.spaceChars[
+            Math.floor(Math.random() * template.spaceChars.length)
+          ];
         result += spaceChar;
       }
     }
@@ -381,16 +392,18 @@ export class TemplateEngine {
 
     // Store template metadata
     for (const [name, template] of Object.entries(this.templates)) {
-      await mcpMemory.create_entities([{
-        name: `template_${name}_${timestamp}`,
-        entityType: 'PuzzleTemplate',
-        observations: [
-          `Name: ${name}`,
-          `Description: ${template.description}`,
-          `Prefix: ${template.prefix}`,
-          `Available Difficulties: ${Object.keys(template.patterns).join(', ')}`
-        ]
-      }]);
+      await mcpMemory.create_entities([
+        {
+          name: `template_${name}_${timestamp}`,
+          entityType: "PuzzleTemplate",
+          observations: [
+            `Name: ${name}`,
+            `Description: ${template.description}`,
+            `Prefix: ${template.prefix}`,
+            `Available Difficulties: ${Object.keys(template.patterns).join(", ")}`,
+          ],
+        },
+      ]);
     }
 
     // Log template usage statistics if needed
@@ -400,7 +413,7 @@ export class TemplateEngine {
     return Object.entries(this.templates).map(([name, template]) => ({
       name,
       description: template.description,
-      difficulties: Object.keys(template.patterns)
+      difficulties: Object.keys(template.patterns),
     }));
   }
 }

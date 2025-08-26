@@ -1,6 +1,6 @@
 {
   "name": "unicode-puzzles-mcp",
-  "version": "0.1.0",
+  "version": "0.3.3",
   "description": "MCP server for quantum steganography puzzles using Unicode",
   "main": "src/server/index.js",
   "type": "module",
@@ -14,12 +14,14 @@
     "lint": "eslint src/"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "jsdom": "^26.1.0",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "eslint": "^9.28.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.10",
-    "eslint": "^9.28.0",
     "prettier": "^3.5.3"
   },
   "keywords": [
@@ -30,6 +32,14 @@
     "quantum",
     "libraxis"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Szowesgad/unicode-puzzles-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Szowesgad/unicode-puzzles-mcp/issues"
+  },
+  "homepage": "https://github.com/Szowesgad/unicode-puzzles-mcp#readme",
   "author": "MCP Division",
   "license": "MIT"
 }

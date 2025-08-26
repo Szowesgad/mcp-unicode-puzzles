@@ -3,9 +3,9 @@
  * Simple test to verify the package works
  */
 
-import { StegoPuzzleManager } from './src/steganography/manager.js';
-import { TemplateEngine } from './src/templates/engine.js';
-import { SymblConnector } from './src/integrations/symbl.js';
+import { StegoPuzzleManager } from '../src/steganography/manager.js';
+import { TemplateEngine } from '../src/templates/engine.js';
+import { SymblConnector } from '../src/integrations/symbl.js';
 
 console.log('🧪 Running package verification tests...\n');
 
