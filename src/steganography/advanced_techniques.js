@@ -1119,7 +1119,7 @@ export class AdvancedUnicodeTechniques {
 
       // Replace spaces with encoded versions
       if (text[i] === " " && secretIndex + 3 < secretBinary.length) {
-        const fourBits = secretBinary.substr(secretIndex, 4);
+        const fourBits = secretBinary.slice(secretIndex, secretIndex + 4);
         encoded =
           encoded.slice(0, -1) + (spaceMap[fourBits] || this.whitespaces.SPACE);
         secretIndex += 4;
