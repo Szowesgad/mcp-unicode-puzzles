@@ -184,11 +184,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case "get_zero_width_chars": {
         // Return hardcoded zero-width characters for now
-        const chars = Object.entries(puzzleManager.zeroWidthChars).map(([name, char]) => ({
-          name,
-          char,
-          unicode: char.charCodeAt(0).toString(16).toUpperCase().padStart(4, '0')
-        }));
+        const chars = Object.entries(puzzleManager.zeroWidthChars).map(formatZeroWidthChar);
 
         return {
           content: [
