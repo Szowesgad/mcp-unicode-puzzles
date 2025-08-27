@@ -1104,14 +1104,14 @@ export class AdvancedUnicodeTechniques {
       "0101": this.whitespaces.HAIR,
       "0110": this.whitespaces.FIGURE,
       "0111": this.whitespaces.PUNCTUATION,
-      1000: this.whitespaces.THREE_PER_EM,
-      1001: this.whitespaces.FOUR_PER_EM,
-      1010: this.whitespaces.SIX_PER_EM,
-      1011: this.whitespaces.NARROW_NO_BREAK,
-      1100: this.whitespaces.MEDIUM_MATH,
-      1101: this.whitespaces.IDEOGRAPHIC,
-      1110: this.whitespaces.EN_QUAD,
-      1111: this.whitespaces.EM_QUAD,
+      "1000": this.whitespaces.THREE_PER_EM,
+      "1001": this.whitespaces.FOUR_PER_EM,
+      "1010": this.whitespaces.SIX_PER_EM,
+      "1011": this.whitespaces.NARROW_NO_BREAK,
+      "1100": this.whitespaces.MEDIUM_MATH,
+      "1101": this.whitespaces.IDEOGRAPHIC,
+      "1110": this.whitespaces.EN_QUAD,
+      "1111": this.whitespaces.EM_QUAD,
     };
 
     for (let i = 0; i < text.length; i++) {
