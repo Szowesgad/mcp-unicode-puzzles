@@ -31,4 +31,4 @@ coverage/
 symbl-data
 .claude
 /unicode-db/data
-/unicode-db
+/unicode-db/loc
