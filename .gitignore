@@ -30,3 +30,5 @@ coverage/
 # External data dependencies
 symbl-data
 .claude
+/unicode-db/data
+/unicode-db

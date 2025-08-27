@@ -258,7 +258,10 @@ export class StegoPuzzleManager {
       .split(template.separator)[1];
   }
 
-  decodeSecret(text, encoding) {
+  decodeSecret(text, encoding = { pattern: 'binary' }) {
+    // Handle both string and object parameter
+    const pattern = typeof encoding === 'string' ? encoding : encoding.pattern || 'binary';
+    
     let binary = "";
     let visibleText = "";
 
@@ -267,9 +270,15 @@ export class StegoPuzzleManager {
 
       // Check if it's a zero-width character
       if (Object.values(this.zeroWidthChars).includes(char)) {
-        switch (encoding) {
+        switch (pattern) {
           case "binary":
-            binary += char === this.zeroWidthChars.ZWSP ? "1" : "0";
+            // Fixed: ZWSP = 1, ZWNJ = 0 (matching the encoding logic)
+            if (char === this.zeroWidthChars.ZWSP) {
+              binary += "1";
+            } else if (char === this.zeroWidthChars.ZWNJ) {
+              binary += "0";
+            }
+            // Ignore other zero-width chars (they might be noise)
             break;
           case "trinary":
             if (char === this.zeroWidthChars.ZWSP) binary += "0";

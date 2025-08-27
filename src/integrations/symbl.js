@@ -55,9 +55,58 @@ export class SymblConnector {
   }
 
   async searchCharacters(query, category = null) {
+    // For now, return hardcoded results based on query
+    // TODO: Connect to unicode-symbols-db or symbl.cc API
+    
+    const queryLower = query.toLowerCase();
+    const results = [];
+    
+    // Hardcoded quantum-related characters
+    if (queryLower.includes('quantum') || queryLower.includes('physics')) {
+      results.push(
+        { char: 'ψ', name: 'Greek Small Letter Psi', code: 'U+03C8', description: 'Wave function in quantum mechanics' },
+        { char: 'Ψ', name: 'Greek Capital Letter Psi', code: 'U+03A8', description: 'Wave function' },
+        { char: 'ℏ', name: 'Planck Constant Over Two Pi', code: 'U+210F', description: 'Reduced Planck constant' },
+        { char: '∞', name: 'Infinity', code: 'U+221E', description: 'Infinite value' },
+        { char: 'α', name: 'Greek Small Letter Alpha', code: 'U+03B1', description: 'Fine structure constant' }
+      );
+    }
+    
+    // Zero-width characters
+    if (queryLower.includes('zero') || queryLower.includes('width') || queryLower.includes('invisible')) {
+      results.push(
+        { char: '\u200B', name: 'Zero Width Space', code: 'U+200B', description: 'Invisible space character' },
+        { char: '\u200C', name: 'Zero Width Non-Joiner', code: 'U+200C', description: 'Prevents ligatures' },
+        { char: '\u200D', name: 'Zero Width Joiner', code: 'U+200D', description: 'Forces ligatures' },
+        { char: '\u2060', name: 'Word Joiner', code: 'U+2060', description: 'Prevents line breaks' }
+      );
+    }
+    
+    // Glitch/block characters
+    if (queryLower.includes('glitch') || queryLower.includes('block')) {
+      results.push(
+        { char: '░', name: 'Light Shade', code: 'U+2591', description: '25% shaded block' },
+        { char: '▒', name: 'Medium Shade', code: 'U+2592', description: '50% shaded block' },
+        { char: '▓', name: 'Dark Shade', code: 'U+2593', description: '75% shaded block' },
+        { char: '█', name: 'Full Block', code: 'U+2588', description: '100% filled block' }
+      );
+    }
+    
+    // If no specific match, return some general interesting characters
+    if (results.length === 0) {
+      results.push(
+        { char: '☠', name: 'Skull and Crossbones', code: 'U+2620', description: 'Danger symbol' },
+        { char: '⚛', name: 'Atom Symbol', code: 'U+269B', description: 'Atomic structure' },
+        { char: '∿', name: 'Sine Wave', code: 'U+223F', description: 'Sinusoidal wave' }
+      );
+    }
+    
+    return results;
+    
+    /* Original web scraping code - kept for future use
     await this.checkRateLimit();
 
-    // Check cache first
+    // Check cache first  
     const cacheKey = `search:${query}:${category}`;
     if (this.cache.has(cacheKey)) {
       return this.cache.get(cacheKey);
@@ -69,6 +118,7 @@ export class SymblConnector {
         `${this.baseUrl}/search/?q=${encodeURIComponent(query)}`,
       );
       const html = await response.text();
+    */
 
       // Parse results using jsdom
       const dom = new JSDOM(html);

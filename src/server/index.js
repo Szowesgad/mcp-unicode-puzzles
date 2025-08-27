@@ -183,7 +183,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case "get_zero_width_chars": {
-        const chars = await symbl.getZeroWidthCharacters();
+        // Return hardcoded zero-width characters for now
+        const chars = Object.entries(puzzleManager.zeroWidthChars).map(([name, char]) => ({
+          name,
+          char,
+          unicode: char.charCodeAt(0).toString(16).toUpperCase().padStart(4, '0')
+        }));
 
         return {
           content: [
@@ -196,7 +201,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case "get_templates": {
-        const availableTemplates = templates.getAvailableTemplates();
+        const availableTemplates = templates.listTemplates();
 
         return {
           content: [
