@@ -1147,7 +1147,7 @@ export class AdvancedUnicodeTechniques {
       // Add emoji with variation selector based on secret
       encoded += match[0];
       if (secretIndex < secretBinary.length) {
-        const nibble = secretBinary.substr(secretIndex, 4).padEnd(4, "0");
+        const nibble = secretBinary.slice(secretIndex, secretIndex + 4).padEnd(4, "0");
         const vsIndex = parseInt(nibble, 2);
         encoded += Object.values(this.variationSelectors)[vsIndex];
         secretIndex += 4;
