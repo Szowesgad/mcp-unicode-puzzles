@@ -2,7 +2,7 @@
 
 **Test Date:** 8/27/2025, 1:28:03 AM
 **Version:** 0.3.3
-**Created by:** M&K Gang of Bastards
+**Created by:** M&K Team
 
 ---
 
@@ -154,7 +154,7 @@ G̝AN̓G̘̽ OF̈́ ̘BAS̓T͋ARDS̺
 ░░▒▒▓▓█ PLEASE RESTART YOUR UNIVERSE █▓▓▒▒░░
 ```
 
-### Art 4: Gang of Bastards Signature
+### Art 4: M&K Team Signature
 
 ```
 ╔════════════════════════════════════════════════════════╗
@@ -169,7 +169,7 @@ G̝AN̓G̘̽ OF̈́ ̘BAS̓T͋ARDS̺
 ║              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                  ║
 ║             ▐░░░░░░░░░░░░░░░░░░░░░░▌                 ║
 ║             ▐░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░▌                 ║
-║             ▐░▌  OF BASTARDS     ▐░▌                 ║
+║             ▐░▌  M&K TEAM        ▐░▌                 ║
 ║             ▐░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░▌                 ║
 ║             ▐░░░░░░░░░░░░░░░░░░░░░░▌                 ║
 ║              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀                  ║

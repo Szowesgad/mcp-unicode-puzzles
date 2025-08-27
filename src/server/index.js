@@ -8,11 +8,13 @@ import {
 import { StegoPuzzleManager } from "../steganography/manager.js";
 import { SymblConnector } from "../integrations/symbl.js";
 import { TemplateEngine } from "../templates/engine.js";
+import { UnicodeDBReader } from "../unicode-db/reader.js";
 
 // Initialize managers
 const puzzleManager = new StegoPuzzleManager();
 const symbl = new SymblConnector();
 const templates = new TemplateEngine();
+const unicodeDB = new UnicodeDBReader();
 
 // Create MCP server
 const server = new Server(
@@ -170,7 +172,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case "search_unicode": {
         const { query } = args;
-        const results = await symbl.searchCharacters(query);
+        // Use UnicodeDB reader instead of symbl
+        const results = await unicodeDB.searchCharacters(query);
 
         return {
           content: [
@@ -183,8 +186,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
 
       case "get_zero_width_chars": {
-        // Return hardcoded zero-width characters for now
-        const chars = Object.entries(puzzleManager.zeroWidthChars).map(formatZeroWidthChar);
+        // Get zero-width characters from Unicode database
+        const dbChars = await unicodeDB.getZeroWidthCharacters();
+        const chars = dbChars.map(item => ({
+          ...item,
+          hex: item.code
+        }));
 
         return {
           content: [

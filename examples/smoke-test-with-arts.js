@@ -29,7 +29,7 @@ async function runTests() {
   log('# 🚀 Unicode Puzzles MCP - Smoke Test Results\n');
   log(`**Test Date:** ${new Date().toLocaleString()}`);
   log(`**Version:** 0.3.3`);
-  log(`**Created by:** M&K Gang of Bastards\n`);
+  log(`**Created by:** M&K Team\n`);
   log('---\n');
 
   // QUANTUM VIBE HEADER
@@ -151,7 +151,7 @@ async function runTests() {
   log('## 👹 Test 5: Zalgo Text Generation\n');
   
   try {
-    const text = "GANG OF BASTARDS";
+    const text = "M&K TEAM";
     const secret = "2025";
     
     const zalgo = advanced.combiningMarksEncode(text, secret);
@@ -215,7 +215,7 @@ async function runTests() {
   log('░░▒▒▓▓█ PLEASE RESTART YOUR UNIVERSE █▓▓▒▒░░');
   log('```\n');
 
-  log('### Art 4: Gang of Bastards Signature\n');
+  log('### Art 4: M&K Team Signature\n');
   log('```');
   log('╔════════════════════════════════════════════════════════╗');
   log('║                                                        ║');
@@ -229,7 +229,7 @@ async function runTests() {
   log('║              ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄                  ║');
   log('║             ▐░░░░░░░░░░░░░░░░░░░░░░▌                 ║');
   log('║             ▐░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░▌                 ║');
-  log('║             ▐░▌  OF BASTARDS     ▐░▌                 ║');
+  log('║             ▐░▌  M&K TEAM        ▐░▌                 ║');
   log('║             ▐░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░▌                 ║');
   log('║             ▐░░░░░░░░░░░░░░░░░░░░░░▌                 ║');
   log('║              ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀                  ║');

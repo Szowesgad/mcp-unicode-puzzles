@@ -102,20 +102,6 @@ export class SymblConnector {
     }
     
     return results;
-    
-    /* Original web scraping code - kept for future use
-    await this.checkRateLimit();
-
-    // Check cache first  
-    const cacheKey = `search:${query}:${category}`;
-    if (this.cache.has(cacheKey)) {
-      return this.cache.get(cacheKey);
-    }
-
-    try {
-    } catch (error) {
-      throw new Error(`Failed to search symbl.cc: ${error.message}`);
-    }
   }
 
   async getZeroWidthCharacters() {
