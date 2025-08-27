@@ -329,7 +329,7 @@ export class StegoPuzzleManager {
     // Simple conversion - group 2 bits into trinary
     let trinary = "";
     for (let i = 0; i < binary.length; i += 2) {
-      const twoBits = binary.substr(i, 2);
+      const twoBits = binary.slice(i, i + 2);
       if (twoBits === "00") trinary += "0";
       else if (twoBits === "01" || twoBits === "10") trinary += "1";
       else trinary += "2";
