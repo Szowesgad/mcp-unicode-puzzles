@@ -300,7 +300,7 @@ export class StegoPuzzleManager {
     };
   }
 
-  applyTemplate(encodedText, template) {
+  applyPatternTemplate(encodedText, template) {
     const pattern = this.patterns[template.name];
     return `${template.prefix}${pattern.separator}${encodedText}${pattern.separator}`;
   }
