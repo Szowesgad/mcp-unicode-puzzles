@@ -113,45 +113,6 @@ export class SymblConnector {
     }
 
     try {
-      // Fetch search results from symbl.cc
-      const response = await fetch(
-        `${this.baseUrl}/search/?q=${encodeURIComponent(query)}`,
-      );
-      const html = await response.text();
-    */
-
-      // Parse results using jsdom
-      const dom = new JSDOM(html);
-      const document = dom.window.document;
-
-      // Extract character data
-      const results = Array.from(document.querySelectorAll(".char-block")).map(
-        (block) => {
-          const char = block.querySelector(".char").textContent;
-          const code = block.querySelector(".code").textContent;
-          const name = block.querySelector(".name").textContent;
-
-          return {
-            char,
-            code: code.replace("U+", ""),
-            name,
-            category: this.determineCategory(code),
-          };
-        },
-      );
-
-      // Filter by category if specified
-      const filtered = category
-        ? results.filter((r) => r.category === category)
-        : results;
-
-      // Cache results
-      this.cache.set(cacheKey, filtered);
-
-      // Update rate limit counter
-      this.rateLimit.requests++;
-
-      return filtered;
     } catch (error) {
       throw new Error(`Failed to search symbl.cc: ${error.message}`);
     }
